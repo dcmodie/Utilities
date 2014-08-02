@@ -1,5 +1,47 @@
 "use strict"
 
+function init(){
+    initHandlers();
+    //Tests for Utilities.inspect()
+    Utilities.inspect({"a":[1,2]})
+    Utilities.inspect({"a":[{"d":"e"},{"f":"g"}]})
+    Utilities.inspect({"a":{"b":"c"}});
+
+    Utilities.inspect(
+        {
+            "a": [
+                {
+                    "d": "e"
+                },
+                {
+                    "f": "g"
+                }
+            ]
+        }
+    );
+
+    Utilities.inspect(
+        {
+            "a":
+                [
+                    {
+                        "d": "e"
+                    },
+                    {
+                        "f": [
+                            {
+                                "k": "l"
+                            },
+                            {
+                                "m": "n"
+                            }
+                        ]
+                    }
+                ]
+        }
+    );
+}
+
 function initHandlers(){
     var currButton = document.getElementById("currencySubmit");
     currButton.addEventListener("click", currencySubmitHandler);
@@ -39,60 +81,4 @@ function currencySubmitHandler(e){
     document.getElementById("formatEuros").innerHTML=euro;
     document.getElementById("formatPounds").innerHTML=pound;
     document.getElementById("formatDollars").innerHTML=dollar;
-}
-
-function init(){
-    initHandlers();
-    //Tests for inspecting objects in the console.
-    Utilities.inspect({"a":[1,2]})
-    Utilities.inspect({"a":[{"d":"e"},{"f":"g"}]})
-    Utilities.inspect({"a":{"b":"c"}});
-
-    Utilities.inspect(
-        {
-            "a": [
-                {
-                    "d": "e"
-                },
-                {
-                    "f": "g"
-                }
-            ]
-        }
-    );
-
-    Utilities.inspect(
-        {
-            "a":
-                [
-                    {
-                        "d": "e"
-                    },
-                    {
-                        "f": [
-                            {
-                                "k": "l"
-                            },
-                            {
-                                "m": "n"
-                            }
-                        ]
-                    }
-                ]
-        }
-    );
-
-
-    Utilities.inspect(
-        {
-            "myKey": [
-                ["P0010001", "NAME", "state", "county", "tract"],
-                ["2703", "Census Tract 4001.01", "17", "119", "400101"],
-                ["5603", "Census Tract 4001.02", "17", "119", "400102"],
-                ["4327", "Census Tract 4002", "17", "119", "400200"]
-            ]
-        }
-)
-
-
 }
