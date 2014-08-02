@@ -148,7 +148,7 @@ var Utilities = (function() {
                 spaces = spaces.concat("    ");
             }
             var str = spaces.concat ("[");
-            console.log(str)
+            console.log(str);
             for (var i = 0;i< array.length; i++){
                 if (Array.isArray(array[i])){
                     Utilities._inspectArray(array[i]);
@@ -183,7 +183,6 @@ var Utilities = (function() {
                 if (Array.isArray(o[key])){
                     indents++;
                     Utilities._inspectArray(o[key]);
-
                 }
                 else if (typeof o[key] == "object"){
                     indents++;
