@@ -53,7 +53,6 @@ function initHandlers(){
     var convertButton = document.getElementById("stringToNumberSubmit");
     convertButton.addEventListener("click", stringConversionHandler);
     var convertInput=document.getElementById("stringToNumInput")
-    //convertInput.addEventListener("keypress",Utilities.numericValidation);
     convertInput.addEventListener("focus",Utilities.clearDefaultOnFocus);
     convertInput.addEventListener("blur",Utilities.checkEmptyOnBlur);
 
